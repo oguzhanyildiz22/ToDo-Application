@@ -1,11 +1,9 @@
-package com.example.ToDo.entities;
+package com.example.ToDo.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 
 @Entity
