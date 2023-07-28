@@ -6,19 +6,17 @@ import com.example.ToDo.business.responses.TaskResponse;
 import com.example.ToDo.core.ModelMapperService;
 import com.example.ToDo.entity.Task;
 import com.example.ToDo.repository.TaskRepository;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
 public class TaskManager implements TaskService {
-
+    @Autowired
     private TaskRepository taskRepository;
+    @Autowired
     private ModelMapperService modelMapperService;
     @Override
     public void addTask(TaskRequest taskrequest) {
