@@ -19,7 +19,7 @@ public class Task {
 
     private String title;
 
-    private String Description;
+    private String description;
 
     private String startDate;
 
