@@ -1,6 +1,7 @@
 package com.example.ToDo.controller;
 
 import com.example.ToDo.business.abstracts.TaskService;
+import com.example.ToDo.business.requests.TaskRequest;
 import com.example.ToDo.business.responses.TaskResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,24 @@ public class TaskController {
         }
         taskService.deleteTask(id);
         return new ResponseEntity<>("deleted",HttpStatus.OK);
+    }
+
+    public ResponseEntity<String> add(TaskRequest taskRequest){
+        if (taskService.controlTask(taskRequest)){
+            return new ResponseEntity<>("Empty field",HttpStatus.BAD_REQUEST);
+        }else {
+            taskService.addTask(taskRequest);
+            return new ResponseEntity<>("added ok",HttpStatus.OK);
+        }
+    }
+
+    public ResponseEntity<String> update(TaskRequest taskRequest){
+        if (taskService.controlTask(taskRequest)){
+            return new ResponseEntity<>("Empty field",HttpStatus.BAD_REQUEST);
+        }else {
+            taskService.updateTask(taskRequest);
+            return new ResponseEntity<>("added ok",HttpStatus.OK);
+        }
     }
 
 }

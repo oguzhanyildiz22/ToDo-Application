@@ -50,5 +50,22 @@ public class TaskManager implements TaskService {
 
         return responseList;
     }
+    @Override
+    public boolean controlTask(TaskRequest taskRequest){
+
+        if (taskRequest.getTitle().isEmpty()){
+            return true;
+        } else if (taskRequest.getTitle().isEmpty()) {
+            return true;
+        } else if (taskRequest.getStartDate().isEmpty()) {
+            return true;
+        }else if(taskRequest.getDeadLine().isEmpty()){
+            return true;
+        }else {
+            return false;
+        }
+
+
+    }
 
 }

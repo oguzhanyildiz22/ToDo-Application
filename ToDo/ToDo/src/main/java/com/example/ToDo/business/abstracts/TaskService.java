@@ -16,5 +16,6 @@ public interface TaskService {
 
     List<TaskResponse> getTasks();
 
+    boolean controlTask(TaskRequest taskRequest);
 
 }
